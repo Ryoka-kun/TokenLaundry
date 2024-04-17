@@ -1,0 +1,179 @@
+[Unit]
+Description=Trading Bot Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root
+Environment="OKX_API_KEY=06a6425e-6c87-45ad-b745-d657ce07510c"
+Environment="OKX_SECRET_KEY=C323383D2AE9BEAAD5B1D458071688C8"
+Environment="OKX_PASSPHRASE=vlmGJ3606841878089092$#"
+Environment="BITGET_API_KEY=bg_163356047b6c4244ef2a7dbb18f869ec"
+Environment="BITGET_SECRET_KEY=5a7921a62cf4a4d27d610fac9a9e27b7c944d5c458152af6e6e452b45244c165"
+Environment="BITGET_PASSPHRASE=vlmGJ3606841878089092"
+Environment="BITFLEX_API_KEY=6W3cvEb8Do1otZOXIC4jfuBcfL87zDlaDM3Jp6aOoWo1Brk1VocaZVFoy8epzOre"
+Environment="BITFLEX_API_SECRET=RHALBFnFxF5SQtgoi3V3MvdGlqrj13kmVRIlyUwnSEGPIy44XSmRzper4399Ryyu"
+Environment="ETH_AMOUNT=100"
+Environment="MARKET_AMOUNT=1000"
+Environment="TRADE_1_FROM=BTC"
+Environment="TRADE_1_TO=USDT"
+Environment="TRADE_1_ETH_AMOUNT=0.5"
+Environment="TRADE_1_MARKET_AMOUNT=500"
+Environment="TRADE_2_FROM=BTC"
+Environment="TRADE_2_TO=USDT"
+Environment="TRADE_2_ETH_AMOUNT=0.5"
+Environment="TRADE_2_MARKET_AMOUNT=500"
+Environment="TRADE_3_FROM=BTC"
+Environment="TRADE_3_TO=USDT"
+Environment="TRADE_3_ETH_AMOUNT=0.5"
+Environment="TRADE_3_MARKET_AMOUNT=500"
+Environment="TRADE_4_FROM=BTC"
+Environment="TRADE_4_TO=USDT"
+Environment="TRADE_4_ETH_AMOUNT=0.5"
+Environment="TRADE_4_MARKET_AMOUNT=500"
+Environment="TRADE_5_FROM=BTC"
+Environment="TRADE_5_TO=USDT"
+Environment="TRADE_5_ETH_AMOUNT=0.5"
+Environment="TRADE_5_MARKET_AMOUNT=500"
+Environment="TRADE_6_FROM=BTC"
+Environment="TRADE_6_TO=USDT"
+Environment="TRADE_6_ETH_AMOUNT=0.5"
+Environment="TRADE_6_MARKET_AMOUNT=500"
+Environment="TRADE_7_FROM=BTC"
+Environment="TRADE_7_TO=USDT"
+Environment="TRADE_7_ETH_AMOUNT=0.5"
+Environment="TRADE_7_MARKET_AMOUNT=500"
+Environment="TRADE_8_FROM=BTC"
+Environment="TRADE_8_TO=USDT"
+Environment="TRADE_8_ETH_AMOUNT=0.5"
+Environment="TRADE_8_MARKET_AMOUNT=500"
+Environment="TRADE_9_FROM=BTC"
+Environment="TRADE_9_TO=USDT"
+Environment="TRADE_9_ETH_AMOUNT=0.5"
+Environment="TRADE_9_MARKET_AMOUNT=500"
+Environment="TRADE_10_FROM=BTC"
+Environment="TRADE_10_TO=USDT"
+Environment="TRADE_10_ETH_AMOUNT=0.5"
+Environment="TRADE_10_MARKET_AMOUNT=500"
+Environment="TRADE_11_FROM=BTC"
+Environment="TRADE_11_TO=USDT"
+Environment="TRADE_11_ETH_AMOUNT=0.5"
+Environment="TRADE_11_MARKET_AMOUNT=500"
+Environment="TRADE_12_FROM=BTC"
+Environment="TRADE_12_TO=USDT"
+Environment="TRADE_12_ETH_AMOUNT=0.5"
+Environment="TRADE_12_MARKET_AMOUNT=500"
+Environment="TRADE_13_FROM=BTC"
+Environment="TRADE_13_TO=USDT"
+Environment="TRADE_13_ETH_AMOUNT=0.5"
+Environment="TRADE_13_MARKET_AMOUNT=500"
+Environment="TRADE_14_FROM=BTC"
+Environment="TRADE_14_TO=USDT"
+Environment="TRADE_14_ETH_AMOUNT=0.5"
+Environment="TRADE_14_MARKET_AMOUNT=500"
+Environment="TRADE_15_FROM=BTC"
+Environment="TRADE_15_TO=USDT"
+Environment="TRADE_15_ETH_AMOUNT=0.5"
+Environment="TRADE_15_MARKET_AMOUNT=500"
+Environment="TRADE_16_FROM=BTC"
+Environment="TRADE_16_TO=USDT"
+Environment="TRADE_16_ETH_AMOUNT=0.5"
+Environment="TRADE_16_MARKET_AMOUNT=500"
+Environment="TRADE_17_FROM=BTC"
+Environment="TRADE_17_TO=USDT"
+Environment="TRADE_17_ETH_AMOUNT=0.5"
+Environment="TRADE_17_MARKET_AMOUNT=500"
+Environment="TRADE_18_FROM=BTC"
+Environment="TRADE_18_TO=USDT"
+Environment="TRADE_18_ETH_AMOUNT=0.5"
+Environment="TRADE_18_MARKET_AMOUNT=500"
+
+ExecStart=/bin/bash -c '/bin/python3 /root/tradebot.py \
+    --okx-api-key "$OKX_API_KEY" \
+    --okx-secret-key "$OKX_SECRET_KEY" \
+    --okx-passphrase "$OKX_PASSPHRASE" \
+    --bitget-api-key "$BITGET_API_KEY" \
+    --bitget-secret-key "$BITGET_SECRET_KEY" \
+    --bitget-passphrase "$BITGET_PASSPHRASE" \
+    --bitflex-api-key "$BITFLEX_API_KEY" \
+    --bitflex-api-secret "$BITFLEX_API_SECRET" \
+    --eth-amount "$ETH_AMOUNT" \
+    --market-amount "$MARKET_AMOUNT" \
+    --trade-1-from "$TRADE_1_FROM" \
+    --trade-1-to "$TRADE_1_TO" \
+    --trade-1-eth-amount "$TRADE_1_ETH_AMOUNT" \
+    --trade-1-market-amount "$TRADE_1_MARKET_AMOUNT" \
+    --trade-2-from "$TRADE_2_FROM" \
+    --trade-2-to "$TRADE_2_TO" \
+    --trade-2-eth-amount "$TRADE_2_ETH_AMOUNT" \
+    --trade-2-market-amount "$TRADE_2_MARKET_AMOUNT" \
+    --trade-3-from "$TRADE_3_FROM" \
+    --trade-3-to "$TRADE_3_TO" \
+    --trade-3-eth-amount "$TRADE_3_ETH_AMOUNT" \
+    --trade-3-market-amount "$TRADE_3_MARKET_AMOUNT" \
+    --trade-4-from "$TRADE_4_FROM" \
+    --trade-4-to "$TRADE_4_TO" \
+    --trade-4-eth-amount "$TRADE_4_ETH_AMOUNT" \
+    --trade-4-market-amount "$TRADE_4_MARKET_AMOUNT" \
+    --trade-5-from "$TRADE_5_FROM" \
+    --trade-5-to "$TRADE_5_TO" \
+    --trade-5-eth-amount "$TRADE_5_ETH_AMOUNT" \
+    --trade-5-market-amount "$TRADE_5_MARKET_AMOUNT" \
+    --trade-6-from "$TRADE_6_FROM" \
+    --trade-6-to "$TRADE_6_TO" \
+    --trade-6-eth-amount "$TRADE_6_ETH_AMOUNT" \
+    --trade-6-market-amount "$TRADE_6_MARKET_AMOUNT" \
+    --trade-7-from "$TRADE_7_FROM" \
+    --trade-7-to "$TRADE_7_TO" \
+    --trade-7-eth-amount "$TRADE_7_ETH_AMOUNT" \
+    --trade-7-market-amount "$TRADE_7_MARKET_AMOUNT" \
+    --trade-8-from "$TRADE_8_FROM" \
+    --trade-8-to "$TRADE_8_TO" \
+    --trade-8-eth-amount "$TRADE_8_ETH_AMOUNT" \
+    --trade-8-market-amount "$TRADE_8_MARKET_AMOUNT" \
+    --trade-9-from "$TRADE_9_FROM" \
+    --trade-9-to "$TRADE_9_TO" \
+    --trade-9-eth-amount "$TRADE_9_ETH_AMOUNT" \
+    --trade-9-market-amount "$TRADE_9_MARKET_AMOUNT" \
+    --trade-10-from "$TRADE_10_FROM" \
+    --trade-10-to "$TRADE_10_TO" \
+    --trade-10-eth-amount "$TRADE_10_ETH_AMOUNT" \
+    --trade-10-market-amount "$TRADE_10_MARKET_AMOUNT" \
+    --trade-11-from "$TRADE_11_FROM" \
+    --trade-11-to "$TRADE_11_TO" \
+    --trade-11-eth-amount "$TRADE_11_ETH_AMOUNT" \
+    --trade-11-market-amount "$TRADE_11_MARKET_AMOUNT" \
+    --trade-12-from "$TRADE_12_FROM" \
+    --trade-12-to "$TRADE_12_TO" \
+    --trade-12-eth-amount "$TRADE_12_ETH_AMOUNT" \
+    --trade-12-market-amount "$TRADE_12_MARKET_AMOUNT" \
+    --trade-13-from "$TRADE_13_FROM" \
+    --trade-13-to "$TRADE_13_TO" \
+    --trade-13-eth-amount "$TRADE_13_ETH_AMOUNT" \
+    --trade-13-market-amount "$TRADE_13_MARKET_AMOUNT" \
+    --trade-14-from "$TRADE_14_FROM" \
+    --trade-14-to "$TRADE_14_TO" \
+    --trade-14-eth-amount "$TRADE_14_ETH_AMOUNT" \
+    --trade-14-market-amount "$TRADE_14_MARKET_AMOUNT" \
+    --trade-15-from "$TRADE_15_FROM" \
+    --trade-15-to "$TRADE_15_TO" \
+    --trade-15-eth-amount "$TRADE_15_ETH_AMOUNT" \
+    --trade-15-market-amount "$TRADE_15_MARKET_AMOUNT" \
+    --trade-16-from "$TRADE_16_FROM" \
+    --trade-16-to "$TRADE_16_TO" \
+    --trade-16-eth-amount "$TRADE_16_ETH_AMOUNT" \
+    --trade-16-market-amount "$TRADE_16_MARKET_AMOUNT" \
+    --trade-17-from "$TRADE_17_FROM" \
+    --trade-17-to "$TRADE_17_TO" \
+    --trade-17-eth-amount "$TRADE_17_ETH_AMOUNT" \
+    --trade-17-market-amount "$TRADE_17_MARKET_AMOUNT" \
+    --trade-18-from "$TRADE_18_FROM" \
+    --trade-18-to "$TRADE_18_TO" \
+    --trade-18-eth-amount "$TRADE_18_ETH_AMOUNT" \
+    --trade-18-market-amount "$TRADE_18_MARKET_AMOUNT"'
+
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target
